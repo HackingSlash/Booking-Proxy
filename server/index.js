@@ -1,3 +1,5 @@
+require('newrelic');
+
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
@@ -13,7 +15,7 @@ app.use(bodyParser.json());
 
 
 // serve client files
-app.use('/rooms/:roomId', express.static(path.join(__dirname, '/../public')));
+app.use('/rooms/:room_id', express.static(path.join(__dirname, '/../public')));
 
 
 // app.get('/rooms', (res, req)=> {
